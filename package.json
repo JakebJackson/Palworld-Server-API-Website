@@ -1,0 +1,21 @@
+{
+  "name": "palworld-website",
+  "version": "1.0.0",
+  "description": "A website that plugs into the palworld server RESTful API to allow the server owner remote use.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build",
+    "render-build":"npm install && npm run build"
+  },
+  "keywords": ["Palworld", "Website", "RESTful", "API"],
+  "author": "Jakeb Jackson",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
