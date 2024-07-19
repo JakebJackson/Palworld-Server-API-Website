@@ -36,7 +36,7 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <Nav />
+      <Nav currentPage={currentPage}/>
       <Outlet />
     </ApolloProvider>
   );

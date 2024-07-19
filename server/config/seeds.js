@@ -7,9 +7,7 @@ db.once('open', async () => {
 
   // test user
   await User.create({
-    firstName: 'Jakeb',
-    lastName: 'Jackson',
-    email: 'jjackson@testmail.com',
+    username: 'Mitthraw',
     password: 'password12345'
   });
 

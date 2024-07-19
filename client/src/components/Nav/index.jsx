@@ -1,9 +1,10 @@
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
-import { capitalizeFirstLetter } from '../../utils/helpers';
+import { removeHyphensAndCapitalize } from '../../utils/helpers';
 
+// eslint-disable-next-line react/prop-types
 function Nav({ currentPage }) {
-  const pages = ["setup"]
+  const pages = ["setup", "faq"]
 
   function showNavigation() {
     if (Auth.loggedIn()) {
@@ -17,7 +18,7 @@ function Nav({ currentPage }) {
           {pages.map((Page) => (
             <li className="nav-item" key={Page}>
               <Link to={`/${Page}`} className={`nav-link ${currentPage === `/${Page}` && 'active'}`}>
-                {capitalizeFirstLetter(Page)}
+                {removeHyphensAndCapitalize(Page)}
               </Link>
             </li>
           ))}
@@ -50,7 +51,7 @@ function Nav({ currentPage }) {
     <header className="flex-row">
       <nav className="navbar bg-dark mb-3 border-bottom border-4" data-bs-theme="dark">
         <div className="container-fluid">
-          <h1 className="px-4 fs-1 text-light" href="/">Avalanche Tech</h1>
+          <h1 className="px-4 fs-1 text-light" href="/">Palworld API</h1>
 
           {showNavigation()}
         </div>
