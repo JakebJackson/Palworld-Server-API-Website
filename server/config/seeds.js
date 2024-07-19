@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Part, Category } = require('../models');
+const { User } = require('../models');
 const cleanDB = require('./cleanDB');
 
 db.once('open', async () => {
@@ -10,8 +10,7 @@ db.once('open', async () => {
     firstName: 'Jakeb',
     lastName: 'Jackson',
     email: 'jjackson@testmail.com',
-    password: 'password12345',
-    orders: []
+    password: 'password12345'
   });
 
   console.log('Users seeded');
